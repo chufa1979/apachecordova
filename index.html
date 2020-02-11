@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+
+		<title>mmenu light demo</title>
+
+		<link type="text/css" rel="stylesheet" href="css/demo.css" />
+    <link type="text/css" rel="stylesheet" href="./js/mmenu-light.css" />
+    
+    <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+		<div id="page">
+			<div class="header">
+				<a href="#menu"><span></span></a>
+				Baufest Mobile
+				<nav id="menu">
+					<ul>
+						<li class="Selected"><a href="index.html">Home</a></li>
+						<li><a href="#" id="deviceview">Información sobre el dispositivo</a></li>
+						<li><a href="#" id="baterianivel">Bateria</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="content">
+        <div class="row">
+          <div class="col-md-3 p-2">
+              <div class="card card-inverse card-primary text-center">
+                <img class="card-img-top" src="./images/angel_tss.jpg" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Baufest adquirió la empresa norteamericana TranSolutions</h4>
+                  <p class="card-text">Anunciamos la incorporación de la empresa norteamericana TranSolutions, una compañía con más de 20 años de experiencia en el desarrollo de servicios y soluciones de software para la industria de logística y transporte.</p>
+                  <a href="https://baufest.com/es/blog-novedades-es/7-espanol/blog/710-baufest-empresa-norteamericana-transolutions-peru" class="btn btn-primary m-2">Leer más</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-3 p-2">
+              <div class="card card-inverse card-primary text-center">
+                <img class="card-img-top" src="./images/Barile.jpg" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Nuevo gerente de la práctica de Infraestructura y Seguridad informática</h4>
+                  <p class="card-text">Guillermo Barile fue nombrado como nuevo Gerente de la práctica de Infraestructura y Seguridad informática, rol desde el cual tendrá a su cargo el desarrollo de las líneas de servicios Cloud y DevOps. </p>
+                  <a href="https://baufest.com/es/blog-novedades-es/7-espanol/blog/710-baufest-empresa-norteamericana-transolutions-peru" class="btn btn-primary m-2">Leer más</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-3 p-2">
+              <div class="card card-inverse card-primary text-center">
+                <img class="card-img-top" src="./images/PeiFullStack.jpg" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Baufest lanza una nueva capacitación gratuita en desarrollo Web Full Stack</h4>
+                  <p class="card-text">Baufest presenta una nueva edición de su Programa de Entrenamiento Intensivo (PEI), para que estudiantes de sistemas o carreras afines puedan capacitarse y formarse como desarrolladores Web Full Stack (Angular y Node.JS).  </p>
+                  <a href="https://baufest.com/es/blog-novedades-es/7-espanol/blog/710-baufest-empresa-norteamericana-transolutions-peru" class="btn btn-primary m-2">Leer más</a>
+                </div>
+              </div>
+          </div>
+  
+</div>
+			</div>
+		</div>
+
+		<script src="./js/mmenu-light.js"></script>
+		<script>
+			var menu = new MmenuLight(
+				document.querySelector( '#menu' ),
+				'all'
+			);
+
+			var navigator = menu.navigation({
+				// selectedClass: 'Selected',
+				// slidingSubmenus: true,
+				// theme: 'dark',
+				// title: 'Menu'
+			});
+
+			var drawer = menu.offcanvas({
+				// position: 'left'
+			});
+
+			//	Open the menu.
+			document.querySelector( 'a[href="#menu"]' )
+				.addEventListener( 'click', evnt => {
+					evnt.preventDefault();
+					drawer.open();
+				});
+
+				const x = document.getElementById("baterianivel"); 
+				x.addEventListener("click", onBatteryStatus); 
+
+				function onBatteryStatus(status) {
+					alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+				}				
+		</script>
+
+
+	</body>
+</html>
