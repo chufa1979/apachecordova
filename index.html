@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="author" content="www.frebsite.nl" />
 		<meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
-
-		<title>mmenu light demo</title>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<title>Menu light demo</title>
 
 		<link type="text/css" rel="stylesheet" href="css/demo.css" />
     <link type="text/css" rel="stylesheet" href="./js/mmenu-light.css" />
@@ -21,8 +21,9 @@
 				<nav id="menu">
 					<ul>
 						<li class="Selected"><a href="index.html">Home</a></li>
-						<li><a href="#" id="deviceview">Información sobre el dispositivo</a></li>
-						<li><a href="#" id="baterianivel">Bateria</a></li>
+						<li><a href="#" id="cordovaDevice">Información sobre el dispositivo</a></li>
+						<li><a href="camera.html">Camara</a></li>
+						
 					</ul>
 				</nav>
 			</div>
@@ -91,12 +92,6 @@
 					drawer.open();
 				});
 
-				const x = document.getElementById("baterianivel"); 
-				x.addEventListener("click", onBatteryStatus); 
-
-				function onBatteryStatus(status) {
-					alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
-				}				
 		</script>
 
 

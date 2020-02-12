@@ -86,3 +86,9 @@ a, a:link, a:active, a:visited, a:hover {
 	height: 2px;
 	margin: 6px 0;
 }
+
+#myImage {
+	width: 95%;
+	height: 95%;
+
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<title>Menu light demo</title>
+
+		<link type="text/css" rel="stylesheet" href="css/demo.css" />
+    <link type="text/css" rel="stylesheet" href="./js/mmenu-light.css" />
+    
+    <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous">
+	</head>
+	<body>
+		<div id="page">
+			<div class="header">
+				<a href="#menu"><span></span></a>
+				Baufest Mobile
+				<nav id="menu">
+					<ul>
+						<li class="Selected"><a href="index.html">Home</a></li>
+						<li><a href="#" id="cordovaDevice">Información sobre el dispositivo</a></li>
+						<li><a href="camera.html">Camara</a></li>
+						
+					</ul>
+				</nav>
+			</div>
+
+			<div class="content">
+        <div class="row">
+          <div class="col-md-3 p-2">
+<h1>Prueba de la Camara</h1>
+
+<button id = "cameraTakePicture">TAKE PICTURE</button>
+<img id = "myImage"></img>
+
+          </div>
+
+  
+</div>
+			</div>
+		</div>
+
+		<script src="./js/mmenu-light.js"></script>
+		<script>
+
+			var menu = new MmenuLight(
+				document.querySelector( '#menu' ),
+				'all'
+			);
+
+			var navigator = menu.navigation({
+				// selectedClass: 'Selected',
+				// slidingSubmenus: true,
+				// theme: 'dark',
+				// title: 'Menu'
+			});
+
+			var drawer = menu.offcanvas({
+				// position: 'left'
+			});
+
+			//	Open the menu.
+			document.querySelector( 'a[href="#menu"]' )
+				.addEventListener( 'click', evnt => {
+					evnt.preventDefault();
+					drawer.open();
+				});
+
+		</script>
+
+
+	</body>
+</html>
